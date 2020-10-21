@@ -3,6 +3,7 @@ const admin = require('firebase-admin')
 const express = require('express')
 const bodyParser = require('body-parser')
 const { region } = require('firebase-functions');
+const { response } = require('express');
 
 admin.initializeApp()
 
@@ -27,10 +28,20 @@ app.set('view engine', 'ejs')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
+//Create Auth Middleware
+function isAuthenticated(request, response, next) {
+
+}
+
 app.get('/', async (request, response) => {
-    const facts = await getFacts()
-    console.log(facts)
-    response.render('index', { data: facts })
+    // const facts = await getFacts()
+    // // console.log(facts)
+    // response.render('index', { data: facts })
+    response.render('index')
+})
+
+app.get('/homecomingQueen', isAuthenticated, (request, response) => {
+    response.render('homecomingQueen')
 })
 
 app.post('/', async (request, response) => {
