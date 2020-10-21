@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device=width,initial-scale=1">
+        <title>true facts.</title>
+    </head>
+    <body>
+        <h1>true facts</h1>
+
+        <ul>
+            <% data.forEach(function(fact) { %>
+                <li>
+                    <%= `${fact.firstName} ${fact.lastName}`%>
+                </li>
+            <% }) %>
+        </ul>
+
+        <form method="POST"> 
+            <p>Enter your breakfast <input name="breakfast" /></p>
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>
