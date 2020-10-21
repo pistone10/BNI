@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Voting App</title>
+
+        <!--bootstrap CSS-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-analytics.js"></script>
+        <script defer src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+        <!-- Your web app's Firebase configuration -->
+        <script>// Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            var firebaseConfig = {
+                apiKey: "AIzaSyCJzhaDUMwG3sSnyAtpUfqlKr1aycJ8e98",
+                authDomain: "bni-businessexchange.firebaseapp.com",
+                databaseURL: "https://bni-businessexchange.firebaseio.com",
+                projectId: "bni-businessexchange",
+                storageBucket: "bni-businessexchange.appspot.com",
+                messagingSenderId: "51828581149",
+                appId: "1:51828581149:web:5f2ec494cbd68276c4b7f4",
+                measurementId: "G-DHQWS2F3F5"
+            }
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig)
+            firebase.analytics()</script>
+    </head>
+    <body>
+        <h1>Voting App</h1>
+        <p>Login with Firebase!</p>
+
+        <h3 id="google-displayName"></h3>
+        <img id="googlepic" src ="" />
+        <p id="google-email"></p>
+
+        <button 
+            class="btn btn-primary"
+            id="google-signin" 
+            onclick={signInWithGoogle()}
+        >
+            Sign In With Google
+        </button>
+        <button 
+            class="btn btn-secondary"
+            id="signout" 
+            onclick={signOut()}
+            style="display: none; visibility: hidden;"
+        >
+            Sign Out
+        </button>
+
+        <script src="js/firebaseAuth.js"></script>
+        <script src="js/firebaseVoting.js"></script>
+    </body>
+</html>
